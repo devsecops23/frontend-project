@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'; 
 import './App.css';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import TextField from 'material-ui/TextField';
@@ -19,7 +19,7 @@ class App extends Component {
         };
     };
 
-    analyzeSentence() {
+    analyzeSentence()  {
         fetch('http://54.163.98.246:8080/sentiment', {
             method: 'POST',
             headers: {
@@ -39,7 +39,7 @@ class App extends Component {
 
     render() {
         const polarityComponent = this.state.polarity !== undefined ?
-            <Polarity sentence={this.state.sentence} polarity={this.state.polarity}/> :
+            <Polarity sentence={this.state.sentence} polarity={this.state.polarity}/> : 
             null;
 
         return (
@@ -49,7 +49,7 @@ class App extends Component {
                         <h2>!!Please type a message!!!!!!</h2>
                         <TextField ref={ref => this.textField = ref} onKeyUp={this.onEnterPress.bind(this)}
                                    hintText="Type your sentence."/>
-                        <RaisedButton  label="Send" style={style} onClick={this.analyzeSentence.bind(this)}/>
+                        <RaisedButton    label="Send" style={style} onClick={this.analyzeSentence.bind(this)}/>
                         {polarityComponent}
                     </Paper>
                 </div>
